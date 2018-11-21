@@ -19,10 +19,8 @@ class String
   end
 
   def count_sentences
-    string_split = self.split('.')
-    string_split.map! |words|
-    words.split('!')
-    end
+    string_split = self.split(/\.(?=[\w])/)
+    
     
     
   
