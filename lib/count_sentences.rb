@@ -17,9 +17,24 @@ class String
     self.end_with?('!')
 
   end
+  
+  
+  #makes a sentence into an array based on punctuation
+  def sentence_to_array (string)
+  string_split = string.split('.')
+  string_split.map! do |words|
+     words.split('!')   
+  end
+  string_split.flatten!
+
+  string_split.map! do |words|
+     words.split('?')   
+  end
+ string_split.flatten
+end
 
   def count_sentences
-    string_split = self.split
+    sentence_to_array(self).count
     
     
     
